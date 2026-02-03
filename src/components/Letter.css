@@ -25,9 +25,34 @@
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.letter.expanded {
-    height: 480px;
-    width: 300px;
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+    .letter {
+        width: 85vw;
+        height: auto;
+        min-height: 480px;
+        padding: 20px 15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .letter.expanded {
+        width: 90vw;
+        height: auto;
+        min-height: 520px;
+    }
+
+    .text-content {
+        font-size: 1rem;
+    }
+
+    .photo-stack {
+        height: 140px;
+    }
+
+    .photo-polaroid {
+        width: 110px;
+    }
 }
 
 .photo-stack {
