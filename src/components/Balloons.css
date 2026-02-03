@@ -1,0 +1,43 @@
+.balloons-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.balloon {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    /* Background color set inline */
+    /* Rotate -45 handled in motion */
+    border-radius: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.balloon::before,
+.balloon::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: inherit;
+    /* Inherits from parent inline style? No, inherit keyword takes from computed. */
+    /* If background-color is set on .balloon via style prop, 'inherit' works on pseudos if supported, 
+     but simpler to use variable */
+    background-color: var(--balloon-color);
+    border-radius: 50%;
+}
+
+.balloon::before {
+    top: -40px;
+    left: 0;
+}
+
+.balloon::after {
+    top: 0;
+    left: 40px;
+}
